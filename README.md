@@ -46,3 +46,4 @@ Core Competency: Automated Portfolio Generation Website for Users
     2. Portfolio Edit Feature 
 
 - Technical Stack
+    
