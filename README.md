@@ -44,3 +44,5 @@ Core Competency: Automated Portfolio Generation Website for Users
 - Admin Page
     1. Authentication
     2. Portfolio Edit Feature 
+
+- Technical Stack
