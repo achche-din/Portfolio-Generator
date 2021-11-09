@@ -46,4 +46,9 @@ Core Competency: Automated Portfolio Generation Website for Users
     2. Portfolio Edit Feature 
 
 - Technical Stack
-    
+    1. Django (Backend)
+    2. React.JS (Frontend)
+    3. DRF
+    4. Splite (Database)
+    5. Heroku (Hosting)
+    6. Git (Version Control)
