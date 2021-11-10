@@ -44,3 +44,11 @@ Core Competency: Automated Portfolio Generation Website for Users
 - Admin Page
     1. Authentication
     2. Portfolio Edit Feature 
+
+- Technical Stack
+    1. Django (Backend)
+    2. React.JS (Frontend)
+    3. DRF
+    4. Sqlite (Database)
+    5. Heroku (Hosting)
+    6. Git (Version Control)
