@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Info,Hero,About,Education,Experience,Project,Skill,Achievement,Blog,Comment
+from .models import Hero,About,Education,Experience,Profile,Project,Skill,Achievement,Blog,Comment,Tag
 
-admin.site.register(Info)
+admin.site.register(Profile)
 admin.site.register(Hero)
 admin.site.register(About)
 admin.site.register(Education)
@@ -11,6 +11,7 @@ admin.site.register(Skill)
 admin.site.register(Achievement)
 admin.site.register(Blog)
 admin.site.register(Comment)
+admin.site.register(Tag)
 
 
 

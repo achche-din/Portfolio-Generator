@@ -2,13 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE
 
-class Info(models.Model):
-    user=models.ForeignKey(User,on_delete=models.CASCADE,related_name='info')
-    registration_number=models.IntegerField()
+class Profile(models.Model):
+    user=models.ForeignKey(User,on_delete=models.CASCADE,related_name='profile')
+    registration_number=models.CharField(max_length=50)
     college_email_id=models.EmailField()
     other_emails=models.TextField() 
     branch=models.CharField(max_length=50)
-    year=models.IntegerField()
+    passout_year=models.IntegerField()
     def __str__(self):
         return self.user.username
 
@@ -33,7 +33,7 @@ class Education(models.Model):
     end_year=models.DateField()
     description=models.TextField()
     def __str__(self):
-        return self.title
+        return self.user.username
 
 class Experience(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,related_name='experience')
@@ -43,14 +43,14 @@ class Experience(models.Model):
     end_year=models.DateField()
     description=models.TextField()
     def __str__(self):
-        return self.title
+        return self.user.username
 
 class Project(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,related_name='projects')
     title=models.CharField(max_length=50)
     description=models.TextField()
     link=models.URLField(blank=True)
-    tags=models.TextField()
+    tech_stack=models.TextField()
     start_date=models.DateField()
     end_date=models.DateField()
     def __str__(self):
@@ -59,6 +59,8 @@ class Project(models.Model):
 class Skill(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,related_name='skills')
     title=models.TextField()
+    def __str__(self):
+        return self.title
     
 
 class Achievement(models.Model):
@@ -66,14 +68,21 @@ class Achievement(models.Model):
     title=models.TextField()
     link=models.TextField(blank=True)
     description=models.TextField()
+    def __str__(self):
+        return self.title
+
+
+class Tag(models.Model):
+    title=models.CharField(max_length=32)
+    def __str__(self):
+        return self.title
 
 class Blog(models.Model):
     title = models.CharField(max_length=50)
     author = models.ForeignKey(User, on_delete=models.CASCADE ,related_name="blogs")
-    tags =models.TextField()
+    tags = models.ManyToManyField(Tag,related_name="Tags")
     content=models.TextField()
     up_Votes=models.IntegerField(default=0)
-    down_Votes=models.IntegerField(default=0)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
 
