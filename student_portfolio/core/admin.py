@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django.db.models.lookups import In
 from .models import Info,Hero,About,Education,Experience,Project,Skill,Achievement,Blog,Comment
 
 admin.site.register(Info)

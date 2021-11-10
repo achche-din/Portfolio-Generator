@@ -7,14 +7,14 @@ class Info(models.Model):
     registration_number=models.IntegerField()
     college_email_id=models.EmailField()
     other_emails=models.TextField() 
-    branch=models.CharField(max_length=4)
+    branch=models.CharField(max_length=50)
     year=models.IntegerField()
     def __str__(self):
         return self.user.username
 
 class Hero(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,related_name='hero')
-    title=models.CharField(max_length=52)
+    title=models.CharField(max_length=50)
     tags=models.TextField()
     def __str__(self):
         return self.title
@@ -27,8 +27,8 @@ class About(models.Model):
 
 class Education(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,related_name='education')
-    type=models.CharField(max_length=100)
-    school=models.CharField(max_length=100)
+    type=models.CharField(max_length=50)
+    school=models.CharField(max_length=50)
     start_year=models.DateField()
     end_year=models.DateField()
     description=models.TextField()
@@ -37,8 +37,8 @@ class Education(models.Model):
 
 class Experience(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,related_name='experience')
-    position=models.CharField(max_length=100)
-    company=models.CharField(max_length=100)
+    position=models.CharField(max_length=50)
+    company=models.CharField(max_length=50)
     start_year=models.DateField()
     end_year=models.DateField()
     description=models.TextField()
@@ -47,7 +47,7 @@ class Experience(models.Model):
 
 class Project(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,related_name='projects')
-    title=models.CharField(max_length=200)
+    title=models.CharField(max_length=50)
     description=models.TextField()
     link=models.URLField(blank=True)
     tags=models.TextField()
@@ -68,7 +68,7 @@ class Achievement(models.Model):
     description=models.TextField()
 
 class Blog(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=50)
     author = models.ForeignKey(User, on_delete=models.CASCADE ,related_name="blogs")
     tags =models.TextField()
     content=models.TextField()
