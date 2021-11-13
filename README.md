@@ -2,8 +2,8 @@
 
 Core Competency: Automated Portfolio Generation Website for Users
 
-- [ ] Planning
-- [ ] Requirements Gathering
+- [x] Planning
+- [x] Requirements Gathering
 - [ ] DataBase Design (ER Diagram)
 - [ ] Api Design
 - [ ] Frontend Template Design
